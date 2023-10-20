@@ -1,0 +1,95 @@
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <title> Formulario</title>
+    <meta name="viewport" content="width=devise-width, user-scalable=no, inicial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/Estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  </head>
+  <body>
+    <section class="form">
+        <h4>Formulario</h4>
+      <input class="controls" type="text" name="Nombre" id="nombre" placeholder="Ingrese su Nombre">
+      <input class="controls" type="text" name="Apellido" id="apellido" placeholder="Ingrese su Apellido">
+      <input class="controls" type="text" name="DNI" id="dni" placeholder="Ingrese su DNI">
+      <input class="controls" type="text" name="Domicilio" id="domicilio" placeholder="Ingrese su Domicilio">
+      <input class="controls" type="text" name="Teléfono" id="teléfono" placeholder="Ingrese su Teléfono">
+      <input class="controls" type="text" name="Correo Electrónico" id="correo electrónico" placeholder="Ingrese su Correo Electrónico">
+      <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
+      <input class="botons" type="submit" value="Enviar">
+   </section>
+
+   <script>
+    expresiones = {
+        nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, 
+        apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
+        dni: /^\d{7,14}$/,
+        domicilio: /^[a-zA-Z0-9\_\-]{4,16}$/,
+        teléfono: /^\d{7,14}$/,
+        correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+    }
+
+    const validar = (e) => { 
+            switch (e.target.id) { 
+                case "nombre": 
+                    if(expresiones.nombre.test(e.target.value)){ 
+                        document.getElementById('nombre').classList.add('form_correcto');
+                        document.getElementById('nombre').classList.remove('form_error');
+                    } else {
+                        document.getElementById('nombre').classList.add('form_error');
+                        document.getElementById('nombre').classList.remove('form_correcto');
+                    }
+                    break;
+                case "apellido":
+                    if(expresiones.celular.test(e.target.value)){
+                        document.getElementById('apellido').classList.add('form_correcto');
+                        document.getElementById('apellido').classList.remove('form_error');
+                    } else {
+                        document.getElementById('apellido').classList.add('form_error');
+                        document.getElementById('apellido').classList.remove('form_correcto');
+                    }
+                    break;
+                case "dni":
+                    if(expresiones.celular.test(e.target.value)){
+                        document.getElementById('dni').classList.add('form_correcto');
+                        document.getElementById('dni').classList.remove('form_error');
+                    } else {
+                        document.getElementById('dni').classList.add('form_error');
+                        document.getElementById('dni').classList.remove('form_correcto');
+                    }
+                    break;
+                    case "domicilio":
+                    if(expresiones.celular.test(e.target.value)){
+                        document.getElementById('domicilio').classList.add('form_correcto');
+                        document.getElementById('domicilio').classList.remove('form_error');
+                    } else {
+                        document.getElementById('domicilio').classList.add('form_error');
+                        document.getElementById('domicilio').classList.remove('form_correcto');
+                    }
+                    break;
+                    case "teléfono":
+                    if(expresiones.celular.test(e.target.value)){
+                        document.getElementById('teléfono').classList.add('form_correcto');
+                        document.getElementById('teléfono').classList.remove('form_error');
+                    } else {
+                        document.getElementById('teléfono').classList.add('form_error');
+                        document.getElementById('teléfono').classList.remove('form_correcto');
+                    }
+                    break;
+                    case "correo electrónico":
+                    if(expresiones.celular.test(e.target.value)){
+                        document.getElementById('correo electrónico').classList.add('form_correcto');
+                        document.getElementById('correo electrónico').classList.remove('form_error');
+                    } else {
+                        document.getElementById('correo electrónico').classList.add('form_error');
+                        document.getElementById('correo electrónico').classList.remove('form_correcto');
+                    }
+                    break;
+            }
+        }
+        inputs.forEach((input) => {
+            input.addEventListener('keyup',validar); 
+        });
+   </script>
+  </body>
+<Html>
